@@ -107,7 +107,7 @@ async def login(request: LoginRequest):
 
             # Checking the password
             if user["password"] == request.password:
-                action_logger.info(f"Login successful: user_id: {user["id"]}, email: {user["email"]}, name:{user["name"]}")   
+                action_logger.info(f"Login successful")   
                 return {"message": "Login successful", "user_id": user["id"], "email": user["email"], "name":user["name"]}
             else:
                 error_logger.error(f"Incorrect password")
